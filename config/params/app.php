@@ -89,10 +89,12 @@ return [
 |------------------------------------------------------------------
 */
 'directories' => [
-    'commands'    => 'app/Console/Command',
-    'migrations'  => 'app/Migration',
-    'controllers' => 'app/Http/Controller',
-    'fixtures'    => 'app/Fixtures'
+    'commands'     =>  'app/Console/Command',
+    'migrations'   =>  'app/Migration',
+    'controllers'  =>  'app/Http/Controller',
+    'fixtures'     =>  'app/Fixtures',
+    'entities'     =>  'app/Entity',
+    'repositories' =>  'app/Repository'
 ],
 
 /*
