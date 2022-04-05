@@ -41,10 +41,10 @@ return [
     'options'    => [],
 ],
 'mysqli' => [
-    // 'driver'     => 'mysqli',
+    'driver'     => 'mysqli',
     'database'   => env('DB_NAME', 'laventure'),
     'host'       => env('DB_HOST', '127.0.0.1'),
-    'port'       => env('DB_PORT', '5432'),
+    'port'       => env('DB_PORT', '3306'),
     'username'   => env('DB_USER', 'root'),
     'password'   => env('DB_PASS', 'secret'),
     'collation'  => 'utf8_unicode_ci',
@@ -53,5 +53,6 @@ return [
     'engine'     => 'InnoDB', // MyISAM
     'options'    => [],
 ],
-'migration_path' => 'database/migrations/'
+'migration_path'  => 'database/migrations/',
+'migration_table' => 'laventure_migrations'
 ];
