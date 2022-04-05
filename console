@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php
+
+/*
+|--------------------------------------------------------------------------------------------------------
+|   Laventure Console application
+|   Ex: $ php console                     (By default argument give list of commands)
+|   Ex: $ php console list                (List all available application commands)
+|   Ex: $ php console --help/-h           (Take help)
+|   Ex: $ php console env:generate        (Generate file .env from .env.example)
+|   Ex: $ php console env:key:generate    (Generate a new key APP_SECRET inside .env)
+|   Ex: $ php console make:command        app:my:fake-command (Create a new command)
+|   Ex: $ php console make:controller     SiteController (Make controller)
+|   Ex: $ php console make:controller     FrontController -a=index,about,news,contact
+|   Ex: $ php console make:controller     Admin/UserController -a=list,create...
+|   Ex: $ php console make:controller     DemoController --resource (make resource)
+|   Ex: $ php console make:controller     DemoController -actions=index,about,contact,portfolio
+|   Ex: $ php console orm:fixtures:make   User        (create a new fixture UserFixture)
+|   Ex: $ php console orm:fixtures:load               (Load all fixtures)
+|   Ex: $ php console make:model  User                (Create a Model)
+|   Ex: $ php console make:entity Cart                (Create Entity and Repository)
+|   Ex: $ php console make:resource Product --api     (Make a rest api resource )
+|   Ex: $ php console make:resource Product           (Make a simple web resource)
+|   Ex: $ php console server:run                      (run local  server php on port :8000 by default)
+|---------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+require(__DIR__ . '/vendor/autoload.php');
+
+$app = require(__DIR__ . '/bootstrap/app.php');
+
+$kernel = $app->get(\Laventure\Contract\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new \Laventure\Component\Console\Input\ConsoleInputArg(),
+    new \Laventure\Component\Console\Output\ConsoleOutput()
+);
+
+
+$kernel->terminate($input, $status);
+
+exit($status);

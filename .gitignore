@@ -1,0 +1,11 @@
+.env
+.env.local
+.idea/
+/vendor
+/framework
+/public/uploads
+/public/bundles
+/storage/cache/app/views/*.php
+/storage/cache/framework/*.php
+/storage/log/*.log
+/storage/migrations_tpl/*
