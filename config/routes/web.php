@@ -25,11 +25,6 @@ Route::map('GET|POST', '/contact', 'SiteController@contact', 'contact');
 
 /*
 Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::get('/blog', 'BlogController@index', 'blog.index');
+Route::resource('foo', 'FooController');
 */
 
-Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::resource('foo', 'FooController');
