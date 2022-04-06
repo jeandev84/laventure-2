@@ -26,6 +26,8 @@ class BlogController extends Controller
         */
         public function index(Request $request): Response
         {
-               return $this->render('blog/list.php');
+               /* dump($request); */
+
+               return $this->render('blog/index.php');
         }
 }
