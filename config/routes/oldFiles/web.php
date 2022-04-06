@@ -31,5 +31,3 @@ Route::get('/blog', 'BlogController@index', 'blog.index');
 Route::get('/blog', 'BlogController@index', 'blog.index');
 */
 
-Route::get('/blog', 'BlogController@index', 'blog.index');
-Route::resource('foo', 'FooController');
