@@ -8,42 +8,30 @@ use Laventure\Foundation\Facade\Routing\Route;
 |----------------------------------------------------------------------
 */
 
-/*
-Route::get('/welcome', function () {
-   // return json data format JSON
-    return [
-        'name' => 'Jean',
-        'age'  => 37,
-        'position' => 'PHP Developer'
-    ];
-});
-*/
 
 Route::get('/', 'SiteController@index', 'home');
 Route::get('/about', 'SiteController@about', 'about');
 Route::map('GET|POST', '/contact', 'SiteController@contact', 'contact');
 
+
+/*
+Route::map('GET', 'foo', 'FooController@index', 'foo.index');
+Route::map('GET', 'blog', 'BlogController@index', 'blog.index');
 Route::map('GET', 'post', 'PostController@index', 'post.index');
 
+$admin = ['module' => "Admin\\", 'name' => "admin.", 'path' => "admin/"];
 
-$admin = [
-    "module" => "Admin\\",
-    "prefix" => "admin/",
-    "name" => "admin."
-];
+Route::group(function () {
+     Route::map('GET', 'post', 'PostController@index', 'post.index');
+}, $admin);
+*/
 
+Route::map('GET', 'post', 'PostController@index', 'post.index');
+
+$admin = ["module" => "Admin\\", "prefix" => "admin/", "name" => "admin."];
 
 Route::group(function () {
      Route::map('GET', 'post', 'PostController@index', 'post.index');
 }, $admin);
 
 
-$magazin_module = [
-    "module" => "Magazin\Module\\",
-    "prefix" => "magazin/module/",
-    "name" => "magazin.module."
-];
-
-Route::group(function () {
-     Route::map('GET', 'shop', 'ShopController@index', 'shop.index');
-}, $magazin_module);
