@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a0214c2b6c5e39397c81f60d452e32b",
+    "content-hash": "d1b916b5fac61ec7cde1158a816fce84",
     "packages": [
         {
             "name": "filp/whoops",
@@ -76,6 +76,59 @@
                 }
             ],
             "time": "2022-01-07T12:00:00+00:00"
+        },
+        {
+            "name": "laventure/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeandev84/laventure-framework.git",
+                "reference": "1ffb7835b4b8afb87ede5f8da9da27823aa213d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeandev84/laventure-framework/zipball/1ffb7835b4b8afb87ede5f8da9da27823aa213d1",
+                "reference": "1ffb7835b4b8afb87ede5f8da9da27823aa213d1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mysqli": "*",
+                "ext-pdo": "*",
+                "filp/whoops": "^2.14",
+                "php": ">=7.1",
+                "symfony/var-dumper": "^5.3",
+                "twig/twig": "^3.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laventure\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jeandev84",
+                    "email": "jeandev84@yahoo.com"
+                }
+            ],
+            "description": "Core application for building web application",
+            "keywords": [
+                "framework",
+                "laventure-framework",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/jeandev84/laventure-framework/issues",
+                "source": "https://github.com/jeandev84/laventure-framework",
+                "wiki": "https://github.com/jeandev84/laventure-framework/wiki"
+            },
+            "time": "2022-04-08T00:40:24+00:00"
         },
         {
             "name": "psr/log",
@@ -544,7 +597,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "laventure/framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
