@@ -16,7 +16,10 @@
 
     {% includePath('/partials/menu/navbar.php') %}
 
-    {{ content }}
+    <div style="margin-top: 50px;">
+        <h3>default layout</h3>
+        {{ content }}
+    </div>
 
 </div>
 <script type="application/javascript" src="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}"></script>
