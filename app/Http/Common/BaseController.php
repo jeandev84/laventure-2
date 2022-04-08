@@ -11,5 +11,8 @@ use Laventure\Foundation\Routing\Controller;
 */
 class BaseController extends Controller
 {
-      protected $layout = 'default';
+    /**
+     * @var mixed
+    */
+    protected $layout = 'layouts/default';
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controller;
 
 use App\Entity\User;
 use App\Fixtures\UserFixture;
+use App\Http\Common\BaseController;
 use App\Repository\UserRepository;
 use Laventure\Component\Database\Connection\Contract\ConnectionInterface;
 use Laventure\Component\Database\Migration\Migrator;
@@ -19,32 +20,23 @@ use Laventure\Foundation\Routing\Controller;
 /**
  * @SiteController
 */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
 
 
-      /**
-       * @var EntityManager
-      */
-      protected $em;
+       /**
+        * @var EntityManager
+       */
+       protected $em;
 
 
 
 
 
-      /**
-       * @var ConnectionInterface
-      */
-      protected $connection;
-
-
-
-
-
-      /**
-       * @var bool
-      */
-      protected $layout = 'layouts/default';
+       /**
+        * @var ConnectionInterface
+       */
+       protected $connection;
 
 
 
@@ -52,51 +44,61 @@ class SiteController extends Controller
        /**
         * @param EntityManager $em
         * @param ConnectionInterface $connection
-      */
-      public function __construct(EntityManager $em, ConnectionInterface $connection)
-      {
+       */
+       public function __construct(EntityManager $em, ConnectionInterface $connection)
+       {
             $this->em = $em;
             $this->connection = $connection;
-      }
+       }
 
 
 
 
 
-      /**
-       * @param Request $request
-       * @param UserRepository $repository
-       * @return Response
-      */
-      public function index(Request $request, UserRepository $repository): Response
-      {
+       /**
+        * @Route(methods="GET", path="/", name="home")
+        *
+        * @param Request $request
+        * @param UserRepository $repository
+        * @return Response
+       */
+       public function index(Request $request, UserRepository $repository): Response
+       {
              return $this->render('index.php', []);
-      }
+       }
 
 
 
 
 
 
-      /**
-       * @param Request $request
-       * @return Response
-      */
-      public function about(Request $request): Response
-      {
+       /**
+        * @Route(methods="GET", path="/about", name="about")
+        *
+        * @param Request $request
+        * @return Response
+       */
+       public function about(Request $request): Response
+       {
           // return $this->render('site/about.php', []);
           return $this->render('about', []);
-      }
+       }
 
 
 
 
-      /**
-       * @param Request $request
-       * @return Response
+       /**
+        * @Route(methods="GET|POST", path="/contact", name="contact")
+        *
+        * @param Request $request
+        * @return Response
        */
        public function contact(Request $request): Response
        {
+            if ($request->isPOST()) {
+                dd($request->request->all());
+            }
+
             // return $this->render('site/contact.php', []);
             return $this->render('contact', []);
        }

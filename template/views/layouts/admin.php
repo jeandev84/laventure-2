@@ -7,15 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin | Layout</title>
 
-    <link rel="stylesheet" href="<?= asset('/assets/bootstrap/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('/assets/css/app.css') ?>">
+    <link rel="stylesheet" href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
 
 </head>
 <body>
 <div class="container">
-    {{ content }}
+    {% includePath('/partials/menu/navbar.php') %}
+
+    <div style="margin-top: 50px;">
+        <h3>admin layout</h3>
+
+        {{ content }}
+    </div>
+
 </div>
-<script type="application/javascript" src="<?= asset('/assets/bootstrap/js/bootstrap.min.js') ?>"></script>
-<script type="application/javascript" src="<?= asset('/assets/js/app.js') ?>"></script>
+<script type="application/javascript" src="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="application/javascript" src="{{ asset('/assets/js/app.js') }}"></script>
 </body>
 </html>
