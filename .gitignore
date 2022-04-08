@@ -9,3 +9,5 @@
 /storage/cache/framework/*.php
 /storage/log/*.log
 /storage/migrations_tpl/*
+composer.json
+composer.lock
