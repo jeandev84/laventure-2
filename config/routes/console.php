@@ -9,7 +9,7 @@ use Laventure\Foundation\Facade\Console\Schedule;
 |----------------------------------------------------------------------
 */
 
-
+/*
 Schedule::command('make:unit', function (Command $command) {
 
 }, 'some description (make:unit) command');
@@ -18,3 +18,5 @@ Schedule::command('make:unit', function (Command $command) {
 Schedule::command('hello', function (Command $command) {
 
 }, 'some description for (hello) command');
+
+*/

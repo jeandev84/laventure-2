@@ -9,7 +9,8 @@ use Laventure\Foundation\Facade\Routing\Route;
 */
 
 
-$api_product = [
+/*
+$product = [
     "module" => "Api\\",
     "prefix" => "api/",
     "name" => "api."
@@ -17,16 +18,6 @@ $api_product = [
 
 Route::api()->group(function () {
     Route::resourceAPI('product', 'ProductController');
-}, $api_product);
+}, $product);
 
-
-
-$api_features_product = [
-    "module" => "Api\Features\\",
-    "prefix" => "api/features/",
-    "name" => "api.features."
-];
-
-Route::api()->group(function () {
-    Route::resourceAPI('features_product', 'ProductController');
-}, $api_features_product);
+*/

@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
 
     /**
      * @var string[]
-     */
+    */
     protected $commands = [
          SayHelloCommand::class
     ];

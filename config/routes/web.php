@@ -9,7 +9,15 @@ use Laventure\Foundation\Facade\Routing\Route;
 */
 
 /*
+Usage example :
+
+
 Route::get('/welcome', function () {
+   return new Response('Welcome to Laventure!');
+});
+
+
+Route::get('/format-json', function () {
    // return json data format JSON
     return [
         'name' => 'Jean',
@@ -17,33 +25,53 @@ Route::get('/welcome', function () {
         'position' => 'PHP Developer'
     ];
 });
-*/
 
-Route::get('/', 'SiteController@index', 'home');
-Route::get('/about', 'SiteController@about', 'about');
-Route::map('GET|POST', '/contact', 'SiteController@contact', 'contact');
+Route::get('/foo', function (Request $request) {
+   return new Response('Welcome to Laventure!');
+});
 
-Route::map('GET', 'post', 'PostController@index', 'post.index');
+
+
+Route::get('/my-service', function (MyService $service) {
+
+   return new Response($service->sendMailContent());
+
+});
+
+Route::get('/user/{id}', function ($id) {
+   return new JsonResponse([
+        'id'       => 1,
+        'name'     => 'Jean-Claude',
+        'position' => 'PHP Developer'
+        'age'      => 38
+   ]);
+});
+
+
+Route::get('/', 'FooController@index', 'home');
+Route::get('/about', [App\Http\Controller\FooController::class, 'about'], 'home');
+Route::post('contact', 'FooController@contact', 'contact');
+
+Route::map('GET|POST', 'foo/contact-us', 'FooController@contactUs', 'contact_us');
+
+Route::get('example/{something}', 'ExampleController@show')
+->where('something', 'some_regex')
+->name('example_show')
+->middleware('ExampleMiddleware')
+;
 
 
 $admin = [
     "module" => "Admin\\",
     "prefix" => "admin/",
-    "name" => "admin."
+    "name" => "admin.",
+    "middlewares" => [AuthenticatedMiddleware::class, 'auth']
 ];
 
 
 Route::group(function () {
-     Route::map('GET', 'post', 'PostController@index', 'post.index');
+     Route::get('post', 'PostController@index', 'post.index');
 }, $admin);
 
+*/
 
-$magazin_module = [
-    "module" => "Magazin\Module\\",
-    "prefix" => "magazin/module/",
-    "name" => "magazin.module."
-];
-
-Route::group(function () {
-     Route::map('GET', 'shop', 'ShopController@index', 'shop.index');
-}, $magazin_module);
