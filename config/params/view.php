@@ -13,7 +13,6 @@ return [
  |------------------------------------------------------------------
 */
 'path'      => 'template/views',
-'layout'    => 'layouts/default',
 'extension' => 'php', // twig
 'cache'     =>  true,
 'compress'  =>  true // false
