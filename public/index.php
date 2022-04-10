@@ -27,12 +27,9 @@ define('Laventure',  microtime(true));
 
 /*
 |----------------------------------------------------------------------
-|   Autoloader classes and dependencies of application
+|   Autoload dependencies of application
 |----------------------------------------------------------------------
 */
-
-
-
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -51,7 +48,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
 |-------------------------------------------------------
-|    Check instance of Kernel
+|    Get instance of Kernel
 |-------------------------------------------------------
 */
 
