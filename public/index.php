@@ -21,6 +21,9 @@ use Laventure\Foundation\Http\Kernel;
 */
 
 
+define('Laventure',  microtime(true));
+
+
 /*
 |----------------------------------------------------------------------
 |   Autoloader classes and dependencies of application
