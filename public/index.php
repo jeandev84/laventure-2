@@ -24,6 +24,7 @@ use Laventure\Foundation\Http\Kernel;
 define('Laventure',  microtime(true));
 
 
+
 /*
 |----------------------------------------------------------------------
 |   Autoloader classes and dependencies of application
@@ -39,7 +40,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 /*
 |-------------------------------------------------------
-|    Require bootstrap of Application
+|    Get instance of Application
 |-------------------------------------------------------
 */
 
