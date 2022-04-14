@@ -19,11 +19,13 @@ Route::get('/welcome', function () {
 });
 */
 
+
 Route::get('/', 'SiteController@index', 'home');
 Route::get('/about', 'SiteController@about', 'about');
 Route::map('GET|POST', '/contact', 'SiteController@contact', 'contact');
 
-Route::map('GET', 'post', 'PostController@index', 'post.index');
+
+// Route::map('GET', '/post', 'PostController@index', 'post.index');
 
 
 $admin = [

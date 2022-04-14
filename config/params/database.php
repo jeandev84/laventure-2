@@ -10,12 +10,12 @@ return [
 
 'connection' => env('DB_TYPE', 'mysql'),
 'sqlite' => [
-    'driver'   => 'sqlite',
+    'connection'   => 'sqlite',
     'database' => 'laventure.db',
     'options'  => []
 ],
 'mysql' => [
-    'driver'     => 'mysql',
+    'connection'     => 'mysql',
     'database'   => env('DB_NAME', 'laventure'),
     'host'       => env('DB_HOST', '127.0.0.1'),
     'port'       => env('DB_PORT', '3306'),
@@ -28,7 +28,7 @@ return [
     'options'    => [],
 ],
 'pgsql' => [
-    'driver'     => 'pgsql',
+    'connection'     => 'pgsql',
     'database'   => env('DB_NAME', 'laventure'),
     'host'       => env('DB_HOST', '127.0.0.1'),
     'port'       => env('DB_PORT', '5432'),
@@ -41,7 +41,7 @@ return [
     'options'    => [],
 ],
 'mysqli' => [
-    'driver'     => 'mysqli',
+    'connection'     => 'mysqli',
     'database'   => env('DB_NAME', 'laventure'),
     'host'       => env('DB_HOST', '127.0.0.1'),
     'port'       => env('DB_PORT', '3306'),

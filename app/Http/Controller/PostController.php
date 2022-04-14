@@ -19,7 +19,7 @@ class PostController extends BaseController
 
          
         /**
-         * @Route(methods="GET", path="post", name="post.index")
+         * @Route(methods="GET", path="/post", name="post.index")
          *
          * @param Request $request
          * @return Response
