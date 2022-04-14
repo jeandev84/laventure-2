@@ -33,5 +33,8 @@
       "App\\": "app/",
       "Laventure\\": "framework/src"
     }
+  },
+  "config": {
+    "platform-check": false
   }
 }

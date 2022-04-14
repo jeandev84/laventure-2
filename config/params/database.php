@@ -8,7 +8,7 @@ return [
 |---------------------------------------------------------------------
 */
 
-'connection' => env('DB_TYPE', 'mysql'),
+'connection' => env('DB_TYPE'),
 'sqlite' => [
     'connection'   => 'sqlite',
     'database' => 'laventure.db',
