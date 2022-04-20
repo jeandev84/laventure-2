@@ -15,5 +15,6 @@ return [
 'path'      => 'template/views',
 'extension' => 'php', // twig
 'cache'     =>  true,
+'cacheDir'  => '/storage/cache/app/views',
 'compress'  =>  true // false
 ];
