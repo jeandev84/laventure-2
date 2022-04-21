@@ -25,9 +25,6 @@ Route::get('/about', 'SiteController@about', 'about');
 Route::map('GET|POST', '/contact', 'SiteController@contact', 'contact');
 
 
-// Route::map('GET', '/post', 'PostController@index', 'post.index');
-
-
 $admin = [
     "module" => "Admin\\",
     "prefix" => "admin/",
@@ -49,3 +46,6 @@ $magazin_module = [
 Route::group(function () {
      Route::map('GET', 'shop', 'ShopController@index', 'shop.index');
 }, $magazin_module);
+
+
+Route::map('GET', 'demo', 'DemoController@index', 'demo.index');

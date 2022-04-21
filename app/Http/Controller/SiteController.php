@@ -105,6 +105,20 @@ class SiteController extends BaseController
 
 
 
+
+
+       /**
+        * @Route(methods="GET", path="/demo", name="demo")
+        *
+        * @return Response
+       */
+       public function demo(): Response
+       {
+            return $this->render('index.html', []);
+       }
+
+
+
        protected function testingEntityManager()
        {
            // make fixture
