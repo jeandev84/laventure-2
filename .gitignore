@@ -5,7 +5,7 @@
 /framework
 /public/uploads
 /public/bundles
-/storage/cache/app/views/*.php
-/storage/cache/framework/views/*.php
+/storage/cache/app/views/*
+/storage/cache/framework/*
 /storage/log/*.log
 /storage/migrations_tpl/*
